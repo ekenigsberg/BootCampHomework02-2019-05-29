@@ -21,7 +21,7 @@ End Sub
 
 # VBA Code: Subroutine #2 of 3: SummarizeAllWorksheets()
 > save these three VBA soubroutines into a blank, macro-enabled workbook and reopen.<br/>
-> the SummarizeAllWorksheets() prompts the user for a file using a standard MSOffice "File Open" dialog window<br/>
+> the SummarizeAllWorksheets() subroutine prompts the user for a file using a standard MSOffice "File Open" dialog window<br/>
 ```visualbasic
 Sub SummarizeAllWorksheets()
     Dim fd As FileDialog
@@ -52,7 +52,7 @@ End Sub
 
 # VBA Code: Subroutine #3 of 3: SummarizeSingleWorksheet()
 > save these three VBA soubroutines into a blank, macro-enabled workbook and reopen.<br/>
-> the SummarizeSingleWorksheet() does the heavy lifting:<br/>
+> the SummarizeSingleWorksheet() subroutine does the heavy lifting:<br/>
 > A) set vars<br/>
 > B) prepare sheet<br/>
 > C) iterate through each cell in "&lt;ticker&gt;" range and populate ticker-level summary cells<br/>
