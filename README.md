@@ -10,15 +10,19 @@
 # Output: Multiple_year_stock_data.xlsx - 2016 tab
 <img src="https://raw.githubusercontent.com/ekenigsberg/BootCampHomework02-2019-05-29/master/MultiYear2016.png" title="Screenshot of 'Multiple_year_stock_data.xlsx:2016'" alt="MultiYearData2014">
 
-# VBA Code
-> (includes an auto_open subroutine, so it can be copied-and-pasted into a blank, macro-enabled workbook)
-<pre>
-Option Explicit
-
+# VBA Code: Subroutine #1 of 3: auto_open()
+> save these three VBA soubroutines into a blank, macro-enabled workbook and reopen.<br/>
+> the auto_open() subroutine is a "kicker" that automatically runs when the workbook is opened<br/>
+```visualbasic
 Sub auto_open()
     Call SummarizeAllWorksheets
 End Sub
+```
 
+# VBA Code: Subroutine #2 of 3: SummarizeAllWorksheets()
+> save these three VBA soubroutines into a blank, macro-enabled workbook and reopen.<br/>
+> the SummarizeAllWorksheets() prompts the user for a file using a standard MSOffice "File Open" dialog window<br/>
+```visualbasic
 Sub SummarizeAllWorksheets()
     Dim fd As FileDialog
     Dim strFilePath As String
@@ -44,7 +48,16 @@ Sub SummarizeAllWorksheets()
         End If
     End With
 End Sub
+```
 
+# VBA Code: Subroutine #3 of 3: SummarizeSingleWorksheet()
+> save these three VBA soubroutines into a blank, macro-enabled workbook and reopen.<br/>
+> the SummarizeSingleWorksheet() does the heavy lifting:<br/>
+> A) set vars<br/>
+> B) prepare sheet<br/>
+> C) iterate through each cell in "&lt;ticker&gt;" range and populate ticker-level summary cells<br/>
+> D) format summary sections<br/>
+```visualbasic
 Sub SummarizeSingleWorksheet(wrk As Worksheet)
     ' SET VARS
     ' ranges for iteration
@@ -81,15 +94,19 @@ Sub SummarizeSingleWorksheet(wrk As Worksheet)
         If rngTkrSource <> rngTkrSource.Offset(-1, 0) Then Set rngPriceOpen = rngTkrSource.Offset(0, 2)
         ' increment dblVolume
         dblVolume = dblVolume + rngTkrSource.Offset(0, 6)
-        ' IF we're on last row of a given ticker's data THEN (1) set rngPriceClose, (2) populate summary cells, (3) reset dblVolume, (4) populate varGreatest(), (5) increment rngTkrSummary
+        ' IF we're on last row of a given ticker's data THEN (1) set rngPriceClose, (2) populate summary cells, 
+        ' (3) reset dblVolume, (4) populate varGreatest(), (5) increment rngTkrSummary
         If rngTkrSource <> rngTkrSource.Offset(1, 0) Then
             ' 1) set rngPriceClose
             Set rngPriceClose = rngTkrSource.Offset(0, 5)
             ' 2a) populate summary cells. protect against #DIV/0! errors by arbitrarily making Percent Change equal zero
             rngTkrSummary = rngTkrSource
             rngTkrSummary.Offset(0, 1) = "=" & rngPriceClose.Address(False, False) & " - " & rngPriceOpen.Address(False, False)
-            rngTkrSummary.Offset(0, 2) = "=IF(" & rngPriceOpen.Address(False, False) & " = 0, 0, " & rngTkrSummary.Offset(0, 1).Address(False, False) & " / " & rngPriceOpen.Address(False, False) & ")"
-            rngTkrSummary.Offset(0, 3) = "=SUM(" & rngPriceOpen.Offset(0, 4).Address(False, False) & ":" & rngPriceClose.Offset(0, 1).Address(False, False) & ")"
+            rngTkrSummary.Offset(0, 2) = "=IF(" & rngPriceOpen.Address(False, False) & " = 0, 0, " & _
+                                         rngTkrSummary.Offset(0, 1).Address(False, False) & " / " & _
+                                         rngPriceOpen.Address(False, False) & ")"
+            rngTkrSummary.Offset(0, 3) = "=SUM(" & rngPriceOpen.Offset(0, 4).Address(False, False) & ":" & _
+                                         rngPriceClose.Offset(0, 1).Address(False, False) & ")"
             ' 2b) use dblVolume for something! confirm that the "Total Stock Volume" cell matches dblVolume
             If rngTkrSummary.Offset(0, 3) <> dblVolume Then
                 MsgBox "There's been an error. The Total Stock Volume computed for " & rngTkrSource & " (" & dblVolume & _
@@ -152,14 +169,14 @@ Sub SummarizeSingleWorksheet(wrk As Worksheet)
         .Columns("A:Q").AutoFit
     End With
 End Sub
-</pre>
+```
 
 # Alternate code for "Greatest" summary cells
-<pre>
+```visualbasic
     wrk.[Q2] = "=MAX(K:K)"
     wrk.[Q3] = "=MIN(K:K)"
     wrk.[Q4] = "=MAX(L:L)"
     wrk.[P2] = "=INDEX(I:I,MATCH(Q2,K:K,FALSE))"
     wrk.[P3] = "=INDEX(I:I,MATCH(Q3,K:K,FALSE))"
     wrk.[P4] = "=INDEX(I:I,MATCH(Q4,L:L,FALSE))"
-</pre>
+```
