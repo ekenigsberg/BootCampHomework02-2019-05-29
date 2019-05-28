@@ -55,7 +55,7 @@ Sub SummarizeSingleWorksheet(wrk As Worksheet)
         ' establish summary sections' titles
         .[I1:L1] = Array("Ticker", "Yearly Change", "Percent Change", "Total Stock Volume")
         .[O2:O4] = Application.Transpose(Array("Greatest % Increase", "Greatest % Decrease", "Greatest Total Volume"))
-        [P1:Q1] = Array("Ticker", "Value")
+        .[P1:Q1] = Array("Ticker", "Value")
         ' set rngTkrSummary
         Set rngTkrSummary = .[I2]
     End With
