@@ -1,5 +1,4 @@
-# BootCampHomework02-2019-05-29
-
+<pre>
 Option Explicit
 
 Sub auto_open()
@@ -139,3 +138,4 @@ Sub SummarizeSingleWorksheet(wrk As Worksheet)
         .Columns("A:Q").AutoFit
     End With
 End Sub
+</pre>
