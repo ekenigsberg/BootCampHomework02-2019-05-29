@@ -180,3 +180,5 @@ End Sub
     wrk.[P3] = "=INDEX(I:I,MATCH(Q3,K:K,FALSE))"
     wrk.[P4] = "=INDEX(I:I,MATCH(Q4,L:L,FALSE))"
 ```
+# Notes about Hungarians
+> The <a href="https://ss64.com/access/syntax-naming-variables.html" target="_blank">VBA variable-naming scheme</a> was invented by Greg Reddick, who adapted it from Microsoft nerd god Charles Simonyi. Man, <a href="https://en.wikipedia.org/wiki/The_Martians_(scientists)" target="_blank">those Hungarians are smart</a>.
