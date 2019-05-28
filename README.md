@@ -1,3 +1,16 @@
+# BootCampHomework #2 (due 2019-05-29)
+> <a href="https://github.com/the-Coding-Boot-Camp-at-UT/UTAMCB201904DATA3/tree/master/02-VBA-Scripting/Homework/Instructions">"The VBA of Wall Street"</a> assignment
+
+# Screenshot of Multiple_year_stock_data.xlsx - 2014 tab
+<img src="https://raw.githubusercontent.com/ekenigsberg/BootCampHomework02-2019-05-29/master/MultiYear2014.png" title="Screenshot of 'Multiple_year_stock_data.xlsx:2014'" alt="MultiYearData2014">
+
+# Screenshot of Multiple_year_stock_data.xlsx - 2015 tab
+<img src="https://raw.githubusercontent.com/ekenigsberg/BootCampHomework02-2019-05-29/master/MultiYear2015.png" title="Screenshot of 'Multiple_year_stock_data.xlsx:2015'" alt="MultiYearData2014">
+
+# Screenshot of Multiple_year_stock_data.xlsx - 2016 tab
+<img src="https://raw.githubusercontent.com/ekenigsberg/BootCampHomework02-2019-05-29/master/MultiYear2016.png" title="Screenshot of 'Multiple_year_stock_data.xlsx:2016'" alt="MultiYearData2014">
+
+# VBA Code (includes an auto_open subroutine, so it can be copied-and-pasted into a blank, macro-enabled workbook)
 <pre>
 Option Explicit
 
