@@ -10,7 +10,8 @@
 # Output: Multiple_year_stock_data.xlsx - 2016 tab
 <img src="https://raw.githubusercontent.com/ekenigsberg/BootCampHomework02-2019-05-29/master/MultiYear2016.png" title="Screenshot of 'Multiple_year_stock_data.xlsx:2016'" alt="MultiYearData2014">
 
-# VBA Code (includes an auto_open subroutine, so it can be copied-and-pasted into a blank, macro-enabled workbook)
+# VBA Code
+> (includes an auto_open subroutine, so it can be copied-and-pasted into a blank, macro-enabled workbook)
 <pre>
 Option Explicit
 
