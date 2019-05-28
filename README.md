@@ -75,7 +75,7 @@ Sub SummarizeSingleWorksheet(wrk As Worksheet)
         Set rngTkrSummary = .[I2]
     End With
     
-    ' ITERATE THROUGH EACH CELL IN "<ticker>" RANGE AND POPULATE TICKER-LEVEL SUMMARY CELLS
+    ' ITERATE THROUGH EACH CELL IN "\<ticker\>" RANGE AND POPULATE TICKER-LEVEL SUMMARY CELLS
     For Each rngTkrSource In ActiveSheet.[ticker]
         ' IF we're on first row of a given ticker's data THEN set rngPriceOpen
         If rngTkrSource <> rngTkrSource.Offset(-1, 0) Then Set rngPriceOpen = rngTkrSource.Offset(0, 2)
