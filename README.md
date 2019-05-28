@@ -11,7 +11,7 @@
 <img src="https://raw.githubusercontent.com/ekenigsberg/BootCampHomework02-2019-05-29/master/MultiYear2016.png" title="Screenshot of 'Multiple_year_stock_data.xlsx:2016'" alt="MultiYearData2014">
 
 # VBA Code: Subroutine #1 of 3: auto_open()
-> save these three VBA soubroutines into a blank, macro-enabled workbook and reopen.<br/>
+> save these three VBA subroutines into a blank, macro-enabled workbook and reopen.<br/>
 > the auto_open() subroutine is a "kicker" that automatically runs when the workbook is opened<br/>
 ```visualbasic
 Sub auto_open()
@@ -20,7 +20,7 @@ End Sub
 ```
 
 # VBA Code: Subroutine #2 of 3: SummarizeAllWorksheets()
-> save these three VBA soubroutines into a blank, macro-enabled workbook and reopen.<br/>
+> save these three VBA subroutines into a blank, macro-enabled workbook and reopen.<br/>
 > the SummarizeAllWorksheets() subroutine prompts the user for a file using a standard MSOffice "File Open" dialog window<br/>
 ```visualbasic
 Sub SummarizeAllWorksheets()
@@ -51,7 +51,7 @@ End Sub
 ```
 
 # VBA Code: Subroutine #3 of 3: SummarizeSingleWorksheet()
-> save these three VBA soubroutines into a blank, macro-enabled workbook and reopen.<br/>
+> save these three VBA subroutines into a blank, macro-enabled workbook and reopen.<br/>
 > the SummarizeSingleWorksheet() subroutine does the heavy lifting:<br/>
 > A) set vars<br/>
 > B) prepare sheet<br/>
