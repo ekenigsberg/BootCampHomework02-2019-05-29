@@ -61,9 +61,9 @@ End Sub
 Sub SummarizeSingleWorksheet(wrk As Worksheet)
     ' SET VARS
     ' ranges for iteration
-    Dim rngTkrSource, rngTkrSummary As Range
+    Dim rngTkrSource As Range, rngTkrSummary As Range
     ' ranges for building summary-table formulas
-    Dim rngPriceOpen, rngPriceClose As Range
+    Dim rngPriceOpen As Range, rngPriceClose As Range
     ' var for Total Stock Volume. I show Total Stock Volume on the spreadsheet as a formula, but I
     ' use this variable to prove I understand how to compute a running total in VBA.
     Dim dblVolume As Double
